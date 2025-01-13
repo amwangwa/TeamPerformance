@@ -1,0 +1,48 @@
+{
+    "regression": {
+        "mae": 1.1022041807584777,
+        "r2": 0.40702778516635457
+    },
+    "ftr_classification": {
+        "accuracy": 0.95,
+        "confusion_matrix": [
+            [
+                12,
+                0,
+                0
+            ],
+            [
+                0,
+                17,
+                0
+            ],
+            [
+                2,
+                0,
+                9
+            ]
+        ],
+        "classification_report": "              precision    recall  f1-score   support\n\n           0       0.86      1.00      0.92        12\n           1       1.00      1.00      1.00        17\n           2       1.00      0.82      0.90        11\n\n    accuracy                           0.95        40\n   macro avg       0.95      0.94      0.94        40\nweighted avg       0.96      0.95      0.95        40\n"
+    },
+    "htr_classification": {
+        "accuracy": 0.875,
+        "confusion_matrix": [
+            [
+                15,
+                2,
+                1
+            ],
+            [
+                0,
+                12,
+                1
+            ],
+            [
+                1,
+                0,
+                8
+            ]
+        ],
+        "classification_report": "              precision    recall  f1-score   support\n\n           0       0.94      0.83      0.88        18\n           1       0.86      0.92      0.89        13\n           2       0.80      0.89      0.84         9\n\n    accuracy                           0.88        40\n   macro avg       0.86      0.88      0.87        40\nweighted avg       0.88      0.88      0.88        40\n"
+    }
+}
