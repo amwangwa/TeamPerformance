@@ -1,0 +1,13 @@
+g values with simple strategies. IterativeImputer : Multivariate imputer that estimates values to impute for each feature with missing values from all the others.  References ---------- * `Olga Troyanskaya, Michael Cantor, Gavin Sherlock, Pat Brown, Trevor Hastie, Robert Tibshirani, David Botstein and Russ B. Altman, Missing value estimation methods for DNA microarrays, BIOINFORMATICS Vol. 17 no. 6, 2001 Pages 520-525. <https:// academic. oup. com/ bioinformatics/ article/ 17/ 6/ 520/ 272365>`_  Examples --------
+Attributes:
+indicator_ – Indicator used to add binary indicators for missing values. ``None`` if add_indicator is False.
+n_features_in_ – Number of features seen during :term:`fit`. .. versionadded:: 0.24
+feature_names_in_ – Names of features seen during :term:`fit`. Defined only when `X` has feature names that are all strings. .. versionadded:: 1.0
+Params:
+missing_values – The placeholder for the missing values. All occurrences of `missing_values` will be imputed. For pandas' dataframes with nullable integer dtypes with missing values, `missing_values` should be set to np. nan, since `pd. NA` will be converted to np. nan.
+n_neighbors – Number of neighboring samples to use for imputation.
+weights – Weight function used in prediction. Possible values: - 'uniform' : uniform weights. All points in each neighborhood are weighted equally. - 'distance' : weight points by the inverse of their distance. in this case, closer neighbors of a query point will have a greater influence than neighbors which are further away. - callable : a user-defined function which accepts an array of distances, and returns an array of the same shape containing the weights.
+metric – Distance metric for searching neighbors. Possible values: - 'nan_euclidean' - callable : a user-defined function which conforms to the definition of ``func_metric(x, y, *, missing_values=np. nan)``. `x` and `y` corresponds to a row (i. e. 1-D arrays) of `X` and `Y`, respectively. The callable should returns a scalar distance value.
+copy – If True, a copy of X will be created. If False, imputation will be done in-place whenever possible.
+add_indicator – If True, a :class:`MissingIndicator` transform will stack onto the output of the imputer's transform. This allows a predictive estimator to account for missingness despite imputation. If a feature has no missing values at fit/ train time, the feature won't appear on the missing indicator even if there are missing values at transform/ test time.
+keep_empty_features – If True, features that consist exclusively of missing values when `fit` is called are returned in results when `transform` is called. The imputed value is always `0`. .. versionadded:: 1.2
